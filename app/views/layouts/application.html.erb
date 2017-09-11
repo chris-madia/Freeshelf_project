@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Freeshelf</title>
+   <%= csrf_meta_tags %>
+
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
+ </head>
+
+ <body>
+   <p><%= link_to "Books", books_path %></p>
+   <p><%= link_to "Log Out", session_path, method: :delete %></p>
+   <%= yield %>
+ </body>
+</html>

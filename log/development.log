@@ -1,0 +1,471 @@
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20170911145028)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "authour" varchar, "description" text, "URL" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170911145028"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20170911145207)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170911145207"]]
+  [1m[35m (21.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-11 14:52:31.798583"], ["updated_at", "2017-09-11 14:52:31.798583"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:18:32 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 5137ms (Views: 5036.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-09-11 11:18:49 -0400
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:4:in `new'
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:19:13 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 279ms (Views: 271.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-09-11 11:19:17 -0400
+Processing by BooksController#index as HTML
+Redirected to http://localhost:3000/users/new
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-09-11 11:19:17 -0400
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:4:in `new'
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:19:24 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 131ms (Views: 119.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-09-11 11:19:52 -0400
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 4794ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:4:in `new'
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:21:17 -0400
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 913ms (Views: 832.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-09-11 11:21:25 -0400
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:4:in `new'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdToBook (20170911153406)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.8ms)[0m  [1m[35mALTER TABLE "books" ADD "user_id" integer[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170911153406"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:43:25 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 916ms (Views: 841.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-09-11 11:43:31 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 181ms (Views: 106.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-11 11:43:47 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H6uxlqkFe+qsMJWBeRnA1EqR0YT1Qf6MO1U2FnD0Ps/dI4x/9B7+rbyBU/SPoFTNV5EHrWUEYDjQPAUR+knBtw==", "user"=>{"email"=>"cmad17@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign me up"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'password' for User.):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started POST "/users" for 127.0.0.1 at 2017-09-11 11:46:18 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H6uxlqkFe+qsMJWBeRnA1EqR0YT1Qf6MO1U2FnD0Ps/dI4x/9B7+rbyBU/SPoFTNV5EHrWUEYDjQPAUR+knBtw==", "user"=>{"email"=>"cmad17@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign me up"}
+Unpermitted parameters: :password, :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cmad17@yahoo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "cmad17@yahoo.com"], ["created_at", "2017-09-11 15:46:20.806062"], ["updated_at", "2017-09-11 15:46:20.806062"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 837ms (ActiveRecord: 15.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 11:46:20 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered sessions/new.html.erb within layouts/application (168.8ms)
+Completed 200 OK in 1660ms (Views: 1425.9ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2017-09-11 11:46:29 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"j3uJ5yFNkTZ3wlW6UvC5o5Kr8zTqgslfHZ4jv+HTiKPq6D8YRyWpC+ZE/bAECtek+5GhvXQmwUC23bfv38BA/Q=="}
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2017-09-11 11:46:29 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 95ms (Views: 88.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-09-11 11:46:33 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 139ms (Views: 118.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-11 11:46:47 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JjkMubFoRnil+3pZ/ercsc62ZecUwNMKDzT15JyXVEfksTFQ7HPDP7VKvCwLU0io07azzoSFTb7kXcbjFiqrPw==", "user"=>{"email"=>"cmad17@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign me up"}
+Unpermitted parameters: :password, :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cmad17@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 132ms (Views: 96.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2017-09-11 11:47:03 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 112ms (Views: 105.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-09-11 11:47:18 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z7MIRHeJrliZppM0WXu5OKrezh/FwCyMIli23Nd5QVUKApHsFif5HX4AyMHYwXM9fr9mRpkRMCMDz1RPdxbebg==", "email"=>"cmad17@yahoo.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cmad17@yahoo.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User:0x007fcbd3158348>):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/session" for 127.0.0.1 at 2017-09-11 11:48:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z7MIRHeJrliZppM0WXu5OKrezh/FwCyMIli23Nd5QVUKApHsFif5HX4AyMHYwXM9fr9mRpkRMCMDz1RPdxbebg==", "email"=>"cmad17@yahoo.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cmad17@yahoo.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 313ms (ActiveRecord: 9.6ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User:0x007fcbd34f01e0>):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/" for 127.0.0.1 at 2017-09-11 12:03:14 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 3284ms (Views: 3197.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-09-11 12:04:32 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 1186ms (Views: 1108.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-09-11 12:04:54 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 274ms (Views: 115.5ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-11 12:05:19 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fzILaa2Ornqc3D4RPXcF5vmtOYM3aaVWSWpmrhgCF7a9ujaA8JUrPYxt+GTLzpH/5K3vqqcsO+KiA1Wpkr/ozg==", "user"=>{"email"=>"madia_christopher1002@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign me up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "madia_christopher1002@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (4.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "madia_christopher1002@gmail.com"], ["password_digest", "$2a$10$aQb0O.UwqGia6SKlGJDOpuSur24KVvIsJiZVuh8K9AgLnIiyBmoaO"], ["created_at", "2017-09-11 16:05:20.123741"], ["updated_at", "2017-09-11 16:05:20.123741"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 249ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-11 12:05:20 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered sessions/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 708ms (Views: 694.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-09-11 12:05:27 -0400
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (85.7ms)
+Completed 200 OK in 334ms (Views: 247.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-09-11 12:05:31 -0400
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (43.9ms)
+  Rendered books/new.html.erb within layouts/application (50.9ms)
+Completed 200 OK in 288ms (Views: 142.8ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-11 12:07:21 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8YEprS/1Wtm+4YhQY8qw14GdH8SVkaXHRDUJaFu/erxC++Ekhns2ILr/KotcKEaa3zsy5hEeKa+nILVeLhC8cw==", "book"=>{"title"=>"IT", "author"=>"Stephan King", "description"=>"A demon clown terrorizes a small town in Main  ", "URL"=>"https://en.wikipedia.org/wiki/It_(novel)"}, "commit"=>"Create Book"}
+  [1m[36mUser Load (14.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 14.5ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'author' for Book.):
+  
+app/controllers/books_controller.rb:20:in `create'
+Started GET "/books" for 127.0.0.1 at 2017-09-11 12:09:03 -0400
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (10.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (403.7ms)
+Completed 200 OK in 1358ms (Views: 1207.2ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-09-11 12:09:10 -0400
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (24.7ms)
+  Rendered books/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 1418ms (Views: 1402.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-11 12:11:24 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uvMIMNc9q/0JPm6Ql4QdPnAZ1hlDqJoHAbSDkrFS274JicC5frPHBA0gzEuoZutzLr/7O8cnFm/ioT+kxP0dcQ==", "book"=>{"title"=>"Ex-Heros", "author"=>"Peter Clines", "description"=>"Stealth. Gorgon. Regenerator. Cerberus. Zzzap. The Mighty Dragon. They were heroes, using their superhuman abilities to make Los Angeles a better place. \r\n \r\nThen the plague of living death spread around the globe. Billions died, civilization fell, and the city of angels was left a desolate zombie wasteland.  \r\n \r\nNow, a year later, the Mighty Dragon and his companions protect a last few thousand survivors in their film-studio-turned-fortress, the Mount. Scarred and traumatized by the horrors they’ve endured, the heroes fight the armies of ravenous ex-humans at their citadel’s gates, lead teams out to scavenge for supplies—and struggle to be the symbols of strength and hope the survivors so desperately need. \r\n \r\nBut the hungry ex-humans aren’t the only threats the heroes face. Former allies, their powers and psyches hideously twisted, lurk in the city’s ruins. And just a few miles away, another group is slowly amassing power . . . led by an enemy with the most terrifying ability of all.", "URL"=>"http://peterclines.com/books/ex-heroes-tr"}, "commit"=>"Create Book"}
+  [1m[36mUser Load (102.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 676ms (ActiveRecord: 102.3ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'author' for Book.):
+  
+app/controllers/books_controller.rb:20:in `create'
+Started GET "/" for 127.0.0.1 at 2017-09-11 14:25:55 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered sessions/new.html.erb within layouts/application (117.6ms)
+Completed 200 OK in 2020ms (Views: 1844.3ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-09-11 14:26:17 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+cm2dy9zSsZwG+hZQ7jPMPXLLUygLfylC8vgX6s8k4KcWgCISRty++GdQFMVQqE3nPF/xT6J9LqgiHQPlS9b3A==", "email"=>"madia_christopher1002@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "madia_christopher1002@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/books
+Completed 302 Found in 297ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-09-11 14:26:17 -0400
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (5.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (163.7ms)
+Completed 200 OK in 508ms (Views: 409.3ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-09-11 14:26:25 -0400
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (101.7ms)
+  Rendered books/new.html.erb within layouts/application (145.3ms)
+Completed 200 OK in 296ms (Views: 209.9ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-11 14:27:32 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PcF2N/NqUToBkFuwmHHzSWKNRkt9dxOgctXwZK0sSR+Ou76+WuQ9wwWO+WunkwUEPCtrafn4n8iRwExS2IOP0A==", "book"=>{"title"=>"IT", "author"=>"Stephen King", "description"=>"blah blah blah books ", "URL"=>"https://en.wikipedia.org/wiki/It_(novel)"}, "commit"=>"Create Book"}
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 7.9ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'author' for Book.):
+  
+app/controllers/books_controller.rb:20:in `create'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeAuthourToAuthor (20170911183042)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "abooks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "author" varchar DEFAULT NULL, "description" text DEFAULT NULL, "URL" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "abooks" ("id","title","author","description","URL","created_at","updated_at","user_id")
+                     SELECT "id","title","authour","description","URL","created_at","updated_at","user_id" FROM "books"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "author" varchar DEFAULT NULL, "description" text DEFAULT NULL, "URL" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "books" ("id","title","author","description","URL","created_at","updated_at","user_id")
+                     SELECT "id","title","author","description","URL","created_at","updated_at","user_id" FROM "abooks"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "abooks"[0m
+  [1m[35mSQL (7.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170911183042"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-09-11 14:33:39 -0400
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered sessions/new.html.erb within layouts/application (170.8ms)
+Completed 200 OK in 1376ms (Views: 1213.0ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-09-11 14:33:49 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iquxiABAWRa4HJEBf+RQsagKpUCOwxi7s1DEbBBGnN/vOAd3ZihhKymaOQspHj62wTD3yRBnEKQYE1A8LlVUgQ==", "email"=>"madia_christopher1002@gmail.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "madia_christopher1002@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/books
+Completed 302 Found in 242ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-09-11 14:33:50 -0400
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (2.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (147.6ms)
+Completed 200 OK in 472ms (Views: 380.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-09-11 14:33:58 -0400
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (12.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (125.6ms)
+  Rendered books/new.html.erb within layouts/application (146.6ms)
+Completed 200 OK in 450ms (Views: 359.2ms | ActiveRecord: 14.2ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-09-11 14:35:17 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ssU2aXfCaM4jY9ID3bOJCm4I8KX2M0H9TxP1uB/L7+UBv/7g3kwENyd9cNjiUX9HMK7dh3K8zZWsBkmOamQpKg==", "book"=>{"title"=>"IT", "author"=>"Stephen King", "description"=>"A small town in Maine is terrorized by a demon clown. ", "URL"=>"https://en.wikipedia.org/wiki/It_(novel)"}, "commit"=>"Create Book"}
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (14.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "URL", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "IT"], ["author", "Stephen King"], ["description", "A small town in Maine is terrorized by a demon clown. "], ["URL", "https://en.wikipedia.org/wiki/It_(novel)"], ["created_at", "2017-09-11 18:35:18.052798"], ["updated_at", "2017-09-11 18:35:18.052798"], ["user_id", 2]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 177ms (ActiveRecord: 30.2ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-09-11 14:35:18 -0400
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 646ms (Views: 619.7ms | ActiveRecord: 3.4ms)
+
+
